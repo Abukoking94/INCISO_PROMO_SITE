@@ -187,9 +187,15 @@ a {
 }
 
 .metric-tile {
+  min-width: 0;
   transition:
     transform 240ms ease,
     background-color 240ms ease;
+}
+
+.metric-title {
+  overflow-wrap: anywhere;
+  line-height: 1.05;
 }
 
 .metric-tile:hover {

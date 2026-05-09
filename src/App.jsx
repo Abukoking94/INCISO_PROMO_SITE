@@ -730,14 +730,14 @@ function ProductPreview() {
                 </span>
                 <LineChart size={18} />
               </div>
-              <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+              <div className="mt-4 grid gap-2 text-center sm:grid-cols-3">
                 {[
                   ['Cases', 'Tracked'],
                   ['Reviews', 'Controlled'],
                   ['Reports', 'Ready'],
                 ].map(([value, label]) => (
                   <div key={label} className="metric-tile rounded-lg bg-white/10 p-3">
-                    <div className="text-xl font-extrabold">{value}</div>
+                    <div className="metric-title text-base font-extrabold sm:text-lg lg:text-xl">{value}</div>
                     <div className="mt-1 text-[11px] font-bold text-white/70">
                       {label}
                     </div>
