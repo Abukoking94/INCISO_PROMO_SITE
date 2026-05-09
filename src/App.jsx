@@ -2,25 +2,21 @@ import {
   ArrowRight,
   BadgeCheck,
   BarChart3,
-  BookOpen,
   Building2,
   Check,
   CheckCircle2,
   ChevronDown,
   ClipboardCheck,
   ClipboardList,
-  Download,
   ExternalLink,
   FileCheck2,
   FileText,
   GraduationCap,
-  KeyRound,
   Library,
   LineChart,
   LockKeyhole,
   Mail,
   Menu,
-  MessageSquareText,
   MonitorSmartphone,
   Phone,
   SearchCheck,
@@ -59,24 +55,25 @@ const contactDetails = [
 const navItems = [
   ['Platform', '#platform'],
   ['Tour', '#tour'],
-  ['Screens', '#screens'],
   ['Outcomes', '#outcomes'],
   ['Security', '#security'],
-  ['Access', '#access'],
+  ['Pricing', '#pricing'],
+  ['Contact', '#contact'],
 ]
 
 const metrics = [
-  ['4', 'Role-specific workspaces'],
+  ['3', 'Role-specific workspaces'],
   ['1', 'Longitudinal training record'],
   ['Web', 'Accessible from browser'],
   ['Secure', 'Role-governed data access'],
 ]
 
 const painPoints = [
-  'Paper logbooks and spreadsheets lose context as soon as the case is recorded.',
-  'Consultant validation becomes difficult to audit when approvals happen through messages.',
-  'Coordinators need department visibility without manually chasing every resident.',
-  'Learning progress, operative exposure, and institutional oversight rarely live together.',
+  'Retrospective end-of-year logbook reconstruction is time-consuming and inefficient',
+  'Consultant verification is difficult due to delayed documentation and high workload',
+  'Paper-based systems lead to inconsistent and unreliable case records',
+  'Departments lack centralized analytics and real-time resident progress tracking',
+  'Manual formatting, signatures, printing, and binding create unnecessary administrative burden',
 ]
 
 const features = [
@@ -92,8 +89,8 @@ const features = [
   },
   {
     icon: BarChart3,
-    title: 'Program dashboards',
-    text: 'Coordinators and admins can understand resident volume, department activity, emergency versus elective mix, and validated training output.',
+    title: 'Program dashboard',
+    text: 'Coordinators can evaluate resident procedure exposure, procedure volume, type, and validated training output.',
   },
   {
     icon: GraduationCap,
@@ -103,17 +100,12 @@ const features = [
   {
     icon: Library,
     title: 'Curated library',
-    text: 'Admins can publish books, landmark guidelines, seminar materials, quiz media, and learning resources in one controlled library.',
-  },
-  {
-    icon: MessageSquareText,
-    title: 'Targeted communication',
-    text: 'Announcements can be directed to everyone, a role, or a specific user while the app keeps unrelated messages out of view.',
+    text: 'Standard reference books, landmark guidelines, seminar materials, and learning resources in one controlled library.',
   },
   {
     icon: BadgeCheck,
     title: 'Identity verification',
-    text: 'Consultants and coordinators can submit proof documents for admin review before receiving higher-trust access.',
+    text: 'Consultants and coordinators submit proof of identity documents for review before receiving higher-trust access.',
   },
   {
     icon: FileText,
@@ -129,14 +121,14 @@ const outcomes = [
     icon: Stethoscope,
   },
   {
-    title: 'For departments',
-    text: 'A clearer view of training volume, consultant supervision, resident distribution, and case patterns.',
-    icon: Building2,
+    title: 'For consultants',
+    text: 'A real-time, organized overview of trainee operative activity with instant validation workflows: no more end-of-year signature bottlenecks or forgotten cases.',
+    icon: UserCheck,
   },
   {
-    title: 'For governance',
-    text: 'More accountable workflows around validation, proof of identity, access control, and reportable activity.',
-    icon: ShieldCheck,
+    title: 'For coordinators',
+    text: 'A clearer view of training volume, consultant supervision, resident distribution, and case patterns.',
+    icon: Building2,
   },
 ]
 
@@ -162,13 +154,6 @@ const roles = [
     description: 'See department-level activity and approve report requests.',
     items: ['Monitor residents', 'Review exports', 'Assess volume'],
   },
-  {
-    title: 'Admins',
-    icon: KeyRound,
-    tone: 'bg-brand-coral text-white',
-    description: 'Operate the system, content, access, and verification layer.',
-    items: ['Manage library', 'Verify users', 'Control subscriptions'],
-  },
 ]
 
 const workflow = [
@@ -184,8 +169,8 @@ const workflow = [
   },
   {
     label: 'Monitor',
-    title: 'Program leadership sees the pattern',
-    text: 'Coordinators and admins can review activity across residents and consultants.',
+    title: 'Coordinator oversees the entire operative performance',
+    text: 'The coordinator oversees the entire training program, ensuring structured case tracking, validation flow, and consistent residency progression.',
   },
   {
     label: 'Improve',
@@ -195,18 +180,11 @@ const workflow = [
 ]
 
 const security = [
-  'Role-based access for residents, consultants, coordinators, and admins',
+  'Role-based access for residents, consultants, and coordinators',
   'Controlled access to training records, messages, payments, and reviews',
   'Restricted document uploads with ownership and file-type checks',
   'Identity verification workflows for senior user roles',
   'Protected application access behind secure sign-in',
-]
-
-const implementation = [
-  ['01', 'Pilot cohort', 'Start with one department or resident year group.'],
-  ['02', 'Verify roles', 'Set up residents, consultants, coordinators, and admins.'],
-  ['03', 'Publish resources', 'Load library materials, question banks, and metadata.'],
-  ['04', 'Measure adoption', 'Review logbook activity, validation rate, and reports.'],
 ]
 
 const roleTour = {
@@ -243,52 +221,13 @@ const roleTour = {
     ],
     bullets: ['Department activity view', 'Resident profile summaries', 'Consultant export review'],
   },
-  Admin: {
-    icon: KeyRound,
-    headline: 'System control for access, verification, content, and payments.',
-    subline: 'Admins operate the platform layer: users, subscriptions, library content, metadata, contact messages, and identity verification.',
-    stats: [
-      ['Users', 'Managed'],
-      ['Library', 'Curated'],
-      ['Proofs', 'Reviewable'],
-    ],
-    bullets: ['User and role management', 'Library publishing', 'Verification and subscription control'],
-  },
 }
-
-const galleryScreens = [
-  {
-    title: 'Resident dashboard',
-    label: 'Progress and learning',
-    icon: BarChart3,
-    rows: ['Accuracy trend', 'Coverage by system', 'Recent quiz performance'],
-  },
-  {
-    title: 'New logbook entry',
-    label: 'Structured case capture',
-    icon: ClipboardList,
-    rows: ['Patient information', 'Procedure summary', 'Surgical team'],
-  },
-  {
-    title: 'Consultant review',
-    label: 'Validation workflow',
-    icon: FileCheck2,
-    rows: ['Pending procedures', 'Feedback note', 'Approve or reject'],
-  },
-  {
-    title: 'Admin console',
-    label: 'Controlled operations',
-    icon: ShieldCheck,
-    rows: ['Payments', 'Library', 'Verification'],
-  },
-]
 
 const pricingPlans = [
   {
     role: 'Resident',
     name: 'Basic',
-    price: '599 Birr/year',
-    compareAt: '799',
+    price: '1,999 Birr/year',
     text: 'Essential tools for daily resident operations.',
     items: [
       '# of quizzes/day: 3',
@@ -306,8 +245,7 @@ const pricingPlans = [
   {
     role: 'Resident',
     name: 'Premium',
-    price: '799 Birr/year',
-    compareAt: '999',
+    price: '2,249 Birr/year',
     text: 'Most popular resident plan with advanced learning and progress tools.',
     items: [
       '# of quizzes/day: Unlimited',
@@ -326,8 +264,8 @@ const pricingPlans = [
   },
   {
     role: 'Consultant',
-    name: 'Free Trial',
-    price: 'Free forever',
+    name: 'Basic',
+    price: 'Free Forever',
     text: 'Core validation tools at no cost.',
     items: [
       'Pending Procedure Review',
@@ -339,11 +277,11 @@ const pricingPlans = [
   },
   {
     role: 'Consultant',
-    name: 'Basic',
-    price: '1,499 Birr/year',
+    name: 'Premium',
+    price: '2,999 Birr/year',
     text: 'Unlock the full consultant workflow.',
     items: [
-      'Everything in Free Trial',
+      'Everything in Basic',
       'Submit Report for Coordinator Approval',
       'Export Logbook as PDF',
       'Export Logbook as XLSX',
@@ -392,13 +330,10 @@ function App() {
       <CaseStudy />
       <Platform />
       <ProductTour />
-      <MockupGallery />
       <Outcomes />
       <RoleExperience />
       <Workflow />
       <Security />
-      <Implementation />
-      <Access />
       <Pricing />
       <RequestAccess />
       <FAQ />
@@ -500,7 +435,7 @@ function SiteHeader() {
           <div>
             <span className="block text-base font-extrabold">Incisiō</span>
             <span className="block text-[11px] font-semibold text-white/68">
-              Resident Companion
+              Your surgical residency, organized.
             </span>
           </div>
         </a>
@@ -614,7 +549,7 @@ function Hero() {
           <div>
               <span className="block text-lg font-extrabold">Incisiō</span>
             <span className="block text-xs font-semibold text-white/68">
-              Resident Companion
+              Your surgical residency, organized.
             </span>
           </div>
         </a>
@@ -642,20 +577,20 @@ function Hero() {
           <div className="glass-chip mb-6 inline-flex max-w-full items-start gap-2 rounded-lg border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold leading-6 text-white/88 backdrop-blur">
             <Sparkles className="mt-1 shrink-0" size={16} />
             <span className="min-w-0 break-words">
-              Surgical training records, supervision, and learning in one place
+              Built for surgeons. Designed for progress.
             </span>
           </div>
           <h1 className="text-4xl font-extrabold leading-[1.02] sm:text-6xl lg:text-7xl">
               Incisiō
           </h1>
           <p className="mt-4 max-w-2xl text-xl font-extrabold leading-tight text-white sm:text-3xl">
-            A modern operating-room logbook and learning platform for surgical
-            residency programs.
+            Built for surgeons. Designed for progress.
           </p>
           <p className="mt-5 max-w-2xl break-words text-base font-semibold leading-8 text-white/78 sm:text-lg">
-            Bring resident procedure records, consultant validation,
-            coordinator oversight, quiz performance, and educational resources
-            into one secure digital environment.
+            A modern all-in-one surgical residency companion built to modernize surgical training through structured tracking, intelligent learning, and accountable supervision.
+          </p>
+          <p className="mt-4 max-w-2xl break-words text-sm font-semibold leading-7 text-white/72 sm:text-base">
+            Centered around a powerful digital logbook, residents can record operative cases with consultant validation and program director oversight, creating a transparent and reliable training record. Incisiō also features an adaptive QBank powered by spaced repetition, performance analytics, study scheduling tools, and upcoming curated learning resources.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
@@ -673,14 +608,13 @@ function Hero() {
               <MonitorSmartphone size={18} />
             </a>
           </div>
-          <div className="mt-10 grid max-w-2xl gap-3 sm:grid-cols-3">
+          <div className="mt-8 flex max-w-2xl flex-wrap gap-x-5 gap-y-2 text-sm font-extrabold uppercase tracking-[0.08em] text-white/70">
             {['Residents', 'Consultants', 'Coordinators'].map((label) => (
-              <div
+              <span
                 key={label}
-                className="glass-chip rounded-lg border border-white/16 bg-white/8 px-4 py-3 text-sm font-extrabold text-white/86"
               >
                 {label}
-              </div>
+              </span>
             ))}
           </div>
         </div>
@@ -691,6 +625,39 @@ function Hero() {
 }
 
 function ProductPreview() {
+  const screens = [
+    {
+      title: 'Resident logbook dashboard',
+      subtitle: 'Case records, learning progress, and pending reviews',
+      stats: [['Cases', 'Logged'], ['QBank', 'Adaptive'], ['Reviews', 'Pending']],
+      rows: [['New procedure entry', 'Structured capture'], ['Personal progress', 'Analytics ready'], ['Study schedule', 'Spaced repetition'], ['Learning resources', 'Curated library']],
+      caption: 'Resident view: daily operative cases, study tools, and progress signals in one workspace.',
+    },
+    {
+      title: 'Consultant review queue',
+      subtitle: 'Validation, feedback, and reviewed activity',
+      stats: [['Reviews', 'Assigned'], ['Feedback', 'Recorded'], ['Cases', 'Verified']],
+      rows: [['Pending procedures', 'Ready to review'], ['Resident activity', 'Organized'], ['Validation history', 'Traceable'], ['Exported records', 'Controlled']],
+      caption: 'Consultant view: faster validation without end-of-year signature bottlenecks.',
+    },
+    {
+      title: 'Coordinator program view',
+      subtitle: 'Training oversight, exposure patterns, and reports',
+      stats: [['Residents', 'Tracked'], ['Exposure', 'Visible'], ['Reports', 'Ready']],
+      rows: [['Procedure volume', 'Centralized'], ['Validation flow', 'Monitored'], ['Resident progress', 'Comparable'], ['Program analytics', 'Actionable']],
+      caption: 'Coordinator view: program-level oversight for case exposure and residency progression.',
+    },
+  ]
+  const [activeIndex, setActiveIndex] = useState(0)
+  const active = screens[activeIndex]
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveIndex((index) => (index + 1) % screens.length)
+    }, 4200)
+    return () => window.clearInterval(timer)
+  }, [screens.length])
+
   return (
     <div
       className="float-panel relative mx-auto w-full min-w-0 max-w-[560px] lg:mx-0 lg:justify-self-end"
@@ -710,10 +677,10 @@ function ProductPreview() {
               />
               <div>
                 <div className="text-sm font-extrabold text-brand-ink">
-                  Program Command View
+                  {active.title}
                 </div>
                 <div className="text-xs font-semibold text-brand-muted">
-                  Training record, validation, learning
+                  {active.subtitle}
                 </div>
               </div>
             </div>
@@ -726,16 +693,12 @@ function ProductPreview() {
             <div className="premium-dark-card rounded-lg bg-brand-ink p-4 text-white">
               <div className="flex items-center justify-between">
                 <span className="text-sm font-extrabold">
-                  Department overview
+                  Platform preview
                 </span>
                 <LineChart size={18} />
               </div>
               <div className="mt-4 grid gap-2 text-center sm:grid-cols-3">
-                {[
-                  ['Cases', 'Tracked'],
-                  ['Reviews', 'Controlled'],
-                  ['Reports', 'Ready'],
-                ].map(([value, label]) => (
+                {active.stats.map(([value, label]) => (
                   <div key={label} className="metric-tile rounded-lg bg-white/10 p-3">
                     <div className="metric-title text-base font-extrabold sm:text-lg lg:text-xl">{value}</div>
                     <div className="mt-1 text-[11px] font-bold text-white/70">
@@ -747,12 +710,7 @@ function ProductPreview() {
             </div>
 
             <div className="grid gap-3 sm:grid-cols-2">
-              {[
-                ['Review queue', 'Controlled access'],
-                ['Learning progress', 'Private to each user'],
-                ['Library resources', 'Curated content'],
-                ['Reviewer access', 'Role-based control'],
-              ].map(([label, value]) => (
+              {active.rows.map(([label, value]) => (
                 <div
                   key={label}
                   className="premium-card rounded-lg border border-brand-line bg-white p-3"
@@ -774,10 +732,10 @@ function ProductPreview() {
                 </div>
                 <div>
                   <div className="text-sm font-extrabold text-brand-ink">
-                    New logbook entry
+                    {active.title}
                   </div>
                   <div className="text-xs font-semibold text-brand-muted">
-                    Appendectomy • 1st assistant • Pending review
+                    {active.caption}
                   </div>
                 </div>
               </div>
@@ -820,12 +778,10 @@ function Problem() {
             The gap
           </p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight text-brand-ink sm:text-4xl">
-            Surgical training data should not be trapped in fragmented tools.
+            Surgical residency logbooks are still largely paper-based and retrospective.
           </h2>
           <p className="mt-5 text-base font-medium leading-8 text-brand-muted">
-              Incisiō is built around the clinical education loop: record the case,
-            validate the supervision, review the department, and improve the
-            learner.
+            Residents often record cases in hospital systems or physical register books throughout the year, then reconstruct and format their official logbooks at the end of the academic cycle. This process is time-consuming, difficult to verify, and burdensome for both residents and consultants. Departments struggle to aggregate data, monitor resident progress, and generate meaningful training analytics.
           </p>
         </div>
         <div className="grid gap-3">
@@ -857,12 +813,11 @@ function CaseStudy() {
               Before and after
             </p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight sm:text-4xl">
-              From scattered records to a validated training system.
+              From fragmented documentation to accountable surgical training.
             </h2>
             <p className="mt-5 text-base font-medium leading-8 text-white/70">
-                The message for institutions is simple: Incisiō turns daily
-              clinical activity into a more complete, reviewable, and
-              educationally useful record.
+              Incisiō turns daily operative experience into a centralized,
+              validated, and insight-driven educational system.
             </p>
           </div>
 
@@ -874,10 +829,13 @@ function CaseStudy() {
                 <h3 className="text-xl font-extrabold">Before Incisiō</h3>
               <ul className="mt-5 space-y-4 text-sm font-semibold leading-6 text-white/72">
                 {[
-                  'Paper or spreadsheet logbooks',
-                  'Approvals scattered across messages',
-                  'No unified learning progress picture',
-                  'Limited department-level visibility',
+                  'Paper-based and fragmented logbook workflow',
+                  'End-of-year case reconstruction and formatting',
+                  'Delayed consultant signatures and verification',
+                  'Difficult tracking of resident progress and case exposure',
+                  'Limited departmental analytics and oversight',
+                  'Administrative burden from printing, binding, and manual submission',
+                  'Inconsistent and difficult-to-verify documentation',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-coral" />
@@ -894,10 +852,13 @@ function CaseStudy() {
                 <h3 className="text-xl font-extrabold">After Incisiō</h3>
               <ul className="mt-5 space-y-4 text-sm font-semibold leading-6 text-white/82">
                 {[
-                  'Structured logbook entries',
-                  'Consultant validation and feedback',
-                  'Progress, quiz, and coverage tracking',
-                  'Coordinator and admin oversight',
+                  'Real-time digital case logging and organization',
+                  'Structured logbooks generated automatically',
+                  'Digital consultant validation and approval workflow',
+                  'Centralized program director oversight and progress monitoring',
+                  'Actionable analytics on resident activity and operative exposure',
+                  'Faster, more reliable, and transparent documentation',
+                  'Integrated learning tools with QBank, spaced repetition, and study planning',
                 ].map((item) => (
                   <li key={item} className="flex gap-3">
                     <Check className="mt-0.5 shrink-0 text-[#7BD7C9]" size={17} />
@@ -919,13 +880,15 @@ function Platform() {
       <SectionHeader
         eyebrow="Platform"
         title="A complete training operations layer"
-        text="Incisiō connects procedure capture, validation, department monitoring, question-bank practice, identity verification, and learning resources without forcing teams into spreadsheets or scattered messaging."
+        text="Incisiō unifies operative case logging, consultant validation, program oversight, adaptive question-bank learning, and study tools into a single structured platform: eliminating fragmented paper-based logbooks, retrospective validation, and limited analytics."
       />
-      <div className="mx-auto mt-10 grid max-w-7xl gap-4 px-5 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
-        {features.map(({ icon: Icon, title, text }) => (
+      <div className="mx-auto mt-10 grid max-w-7xl gap-4 px-5 sm:px-8 md:grid-cols-2 lg:grid-cols-6">
+        {features.map(({ icon: Icon, title, text }, index) => (
           <article
             key={title}
-            className="premium-card rounded-lg border border-brand-line bg-white p-6 shadow-line"
+            className={`premium-card rounded-lg border border-brand-line bg-white shadow-line ${
+              index < 3 ? 'p-6 md:col-span-2' : 'p-5 md:col-span-3 lg:col-span-3 xl:col-span-1'
+            }`}
             data-reveal
           >
             <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-lg bg-brand-ink text-white">
@@ -1024,63 +987,6 @@ function ProductTour() {
   )
 }
 
-function MockupGallery() {
-  return (
-    <section id="screens" className="section-soft bg-brand-mist py-20">
-      <SectionHeader
-        eyebrow="Product screens"
-        title="Screenshot-style previews for the real app experience"
-        text="These previews show the core product areas users encounter inside the secure application workspace."
-      />
-
-      <div className="mx-auto mt-10 grid max-w-7xl gap-4 px-5 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
-        {galleryScreens.map(({ title, label, icon: Icon, rows }) => (
-          <article
-            key={title}
-            className="device-card premium-card overflow-hidden rounded-lg border border-brand-line bg-white shadow-line"
-            data-reveal
-          >
-            <div className="flex items-center gap-2 border-b border-brand-line bg-brand-ink px-4 py-3">
-              <span className="h-2.5 w-2.5 rounded-full bg-brand-coral" />
-              <span className="h-2.5 w-2.5 rounded-full bg-brand-gold" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#7BD7C9]" />
-            </div>
-            <div className="p-5">
-              <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-mist text-brand-ink">
-                <Icon size={21} />
-              </div>
-              <h3 className="mt-5 text-lg font-extrabold text-brand-ink">
-                {title}
-              </h3>
-              <p className="mt-1 text-xs font-bold uppercase text-brand-muted">
-                {label}
-              </p>
-              <div className="mt-5 space-y-3">
-                {rows.map((row, index) => (
-                  <div key={row} className="rounded-lg bg-brand-mist p-3">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs font-bold text-brand-muted">
-                        {row}
-                      </span>
-                      <span className="h-2 w-10 rounded-full bg-brand-teal/40" />
-                    </div>
-                    <div className="mt-3 h-2 rounded-full bg-white">
-                      <div
-                        className="h-2 rounded-full bg-brand-teal"
-                        style={{ width: `${72 - index * 13}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
-  )
-}
-
 function Outcomes() {
   return (
     <section id="outcomes" className="bg-white py-20">
@@ -1133,7 +1039,7 @@ function RoleExperience() {
         text="The platform gives each user the controls they need while keeping the underlying training record connected."
         dark
       />
-      <div className="mx-auto mt-10 grid max-w-7xl gap-4 px-5 sm:px-8 lg:grid-cols-4">
+      <div className="mx-auto mt-10 grid max-w-7xl gap-4 px-5 sm:px-8 lg:grid-cols-3">
         {roles.map(({ title, icon: Icon, tone, description, items }) => (
           <article
             key={title}
@@ -1249,103 +1155,6 @@ function Security() {
               </li>
             ))}
           </ul>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-function Implementation() {
-  return (
-    <section className="bg-brand-mist py-20">
-      <SectionHeader
-        eyebrow="Rollout"
-        title="A practical path from pilot to program adoption"
-        text="The platform can begin with one cohort, then grow into a department-wide training operations layer as users and data quality mature."
-      />
-      <div className="mx-auto mt-10 grid max-w-7xl gap-4 px-5 sm:px-8 md:grid-cols-2 lg:grid-cols-4">
-        {implementation.map(([step, title, text]) => (
-          <article
-            key={step}
-            className="premium-card rounded-lg border border-brand-line bg-white p-6"
-            data-reveal
-          >
-            <div className="text-sm font-extrabold text-brand-coral">{step}</div>
-            <h3 className="mt-4 text-lg font-extrabold text-brand-ink">
-              {title}
-            </h3>
-            <p className="mt-3 text-sm font-medium leading-7 text-brand-muted">
-              {text}
-            </p>
-          </article>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-function Access() {
-  return (
-    <section id="access" className="bg-white py-20">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[1fr_0.8fr] lg:items-center">
-        <div data-reveal>
-          <p className="text-sm font-extrabold uppercase text-brand-teal">
-            Access
-          </p>
-          <h2 className="mt-3 text-3xl font-extrabold leading-tight text-brand-ink sm:text-4xl">
-            Promote here. Work inside the secure app.
-          </h2>
-          <p className="mt-5 max-w-2xl text-base font-medium leading-8 text-brand-muted">
-            The public website presents the product clearly, while the
-            application workspace remains protected for authorized users.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a
-              href={appUrl}
-              className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-brand-ink px-5 py-4 text-sm font-extrabold text-white shadow-soft hover:bg-brand-teal"
-            >
-              Open Live App
-              <ArrowRight size={18} />
-            </a>
-            <a
-              href="#faq"
-              className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg border border-brand-line px-5 py-4 text-sm font-extrabold text-brand-ink hover:bg-brand-mist"
-            >
-              Read FAQ
-              <BookOpen size={18} />
-            </a>
-          </div>
-        </div>
-        <div className="premium-card rounded-lg border border-brand-line bg-brand-mist p-6 shadow-line" data-reveal>
-          <div className="flex items-center gap-4">
-            <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-ink text-white">
-              <Download size={22} />
-            </div>
-            <div>
-              <h3 className="font-extrabold text-brand-ink">
-                Web-ready platform
-              </h3>
-              <p className="mt-1 text-sm font-semibold text-brand-muted">
-                Built for browser-based access across phones, tablets, and desktops.
-              </p>
-            </div>
-          </div>
-          <div className="mt-6 grid gap-3">
-            {[
-              ['Public website', 'incisio.com'],
-              ['Application portal', 'app.incisio.com'],
-              ['Current platform', 'resident-companion.web.app'],
-            ].map(([label, value]) => (
-              <div key={label} className="premium-card rounded-lg bg-white p-4">
-                <div className="text-xs font-bold uppercase text-brand-muted">
-                  {label}
-                </div>
-                <div className="mt-1 break-words text-sm font-extrabold text-brand-ink">
-                  {value}
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
@@ -1684,7 +1493,7 @@ function Footer() {
               <div>
                 <div className="text-lg font-extrabold">Incisiō</div>
                 <div className="text-sm font-semibold text-white/60">
-                  Secure surgical training platform
+                  Your surgical residency, organized.
                 </div>
               </div>
             </div>
@@ -1701,28 +1510,9 @@ function Footer() {
                   </a>
                 ))}
               </div>
-              <div className="flex flex-wrap gap-2">
-                {['Role-based access', 'Validated records', 'Web and mobile'].map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-lg border border-white/10 bg-white/[0.05] px-3 py-1.5 text-xs font-extrabold text-[#7bd7c9]"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
             </div>
 
             <div className="grid gap-3 lg:justify-items-end">
-              <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm font-semibold text-white/72 lg:justify-end">
-                <span>Dr. Mahad</span>
-                <a className="hover:text-white" href="mailto:residentcompanion@gmail.com">
-                  residentcompanion@gmail.com
-                </a>
-                <a className="hover:text-white" href="tel:+251911053336">
-                  +251-911053336
-                </a>
-              </div>
               <a
                 href={appUrl}
                 className="btn-lift inline-flex w-fit items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-extrabold text-brand-ink hover:bg-brand-mist"
@@ -1734,8 +1524,7 @@ function Footer() {
           </div>
 
           <div className="mt-4 flex flex-col gap-2 border-t border-white/10 pt-4 text-xs font-bold text-white/42 sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Incisiō. All rights reserved.</p>
-            <p>Residents, consultants, coordinators, and training programs.</p>
+            <p>© 2026 A Scope Solutions Product. All rights reserved.</p>
           </div>
         </div>
       </div>
