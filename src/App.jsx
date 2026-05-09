@@ -1670,38 +1670,133 @@ function FAQItem({ faq, defaultOpen = false }) {
 
 function Footer() {
   return (
-    <footer className="bg-brand-ink px-5 py-10 text-white sm:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex items-center gap-3">
-          <img
-          src="/incisio-icon.png"
-            alt=""
-            className="h-10 w-10 rounded-lg object-cover"
-          />
-          <div>
-          <div className="font-extrabold">Incisiō</div>
-            <div className="text-sm font-semibold text-white/60">
-              Resident Companion platform
+    <footer className="relative overflow-hidden bg-brand-ink px-5 py-14 text-white sm:px-8">
+      <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-teal via-[#7bd7c9] to-brand-coral" />
+      <div className="relative mx-auto max-w-7xl">
+        <div className="grid gap-8 lg:grid-cols-[1.15fr_0.85fr_0.9fr]">
+          <div className="rounded-lg border border-white/10 bg-white/[0.06] p-6 shadow-soft">
+            <div className="flex items-center gap-3">
+              <img
+                src="/incisio-icon.png"
+                alt=""
+                className="h-12 w-12 rounded-lg border border-white/12 bg-white object-cover"
+              />
+              <div>
+                <div className="text-xl font-extrabold">Incisiō</div>
+                <div className="text-sm font-semibold text-white/60">
+                  Resident Companion platform
+                </div>
+              </div>
+            </div>
+            <p className="mt-5 max-w-lg text-sm font-medium leading-7 text-white/68">
+              A secure surgical training companion for structured logbooks,
+              consultant validation, learning progress, and program oversight.
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-3">
+              {[
+                ['Role-based', 'Access'],
+                ['Validated', 'Records'],
+                ['Web-ready', 'Platform'],
+              ].map(([title, label]) => (
+                <div
+                  key={title}
+                  className="rounded-lg border border-white/10 bg-white/[0.05] p-3"
+                >
+                  <div className="text-sm font-extrabold text-[#7bd7c9]">
+                    {title}
+                  </div>
+                  <div className="text-xs font-bold uppercase text-white/45">
+                    {label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-        <div className="flex flex-col gap-4 lg:items-end">
-          <div className="flex flex-wrap gap-3 text-sm font-semibold text-white/75">
-            <span>Dr. Mahad</span>
-            <a className="hover:text-white" href="mailto:residentcompanion@gmail.com">
-              residentcompanion@gmail.com
-            </a>
-            <a className="hover:text-white" href="tel:+251911053336">
-              +251-911053336
+
+          <div className="grid gap-6 rounded-lg border border-white/10 bg-white/[0.04] p-6 sm:grid-cols-2 lg:grid-cols-1">
+            <div>
+              <h3 className="text-sm font-extrabold uppercase text-[#7bd7c9]">
+                Explore
+              </h3>
+              <div className="mt-4 grid gap-3">
+                {navItems.map(([label, href]) => (
+                  <a
+                    key={label}
+                    href={href}
+                    className="group flex items-center justify-between rounded-lg px-1 py-1 text-sm font-bold text-white/72 transition hover:text-white"
+                  >
+                    {label}
+                    <ArrowRight
+                      className="opacity-0 transition group-hover:translate-x-1 group-hover:opacity-100"
+                      size={15}
+                    />
+                  </a>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-sm font-extrabold uppercase text-[#7bd7c9]">
+                Built For
+              </h3>
+              <div className="mt-4 grid gap-2 text-sm font-bold text-white/68">
+                <span>Residents</span>
+                <span>Consultants</span>
+                <span>Coordinators</span>
+                <span>Training programs</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-lg border border-white/10 bg-white/[0.06] p-6">
+            <h3 className="text-sm font-extrabold uppercase text-[#7bd7c9]">
+              Direct Contact
+            </h3>
+            <div className="mt-4 grid gap-3">
+              {contactDetails.map(({ label, value, href, icon: Icon }) => (
+                <div
+                  key={label}
+                  className="flex gap-3 rounded-lg border border-white/10 bg-white/[0.05] p-3"
+                >
+                  <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#7bd7c9]">
+                    <Icon size={16} />
+                  </span>
+                  <div className="min-w-0">
+                    <div className="text-xs font-extrabold uppercase text-white/42">
+                      {label}
+                    </div>
+                    {href ? (
+                      <a
+                        href={href}
+                        className="mt-1 block break-words text-sm font-extrabold text-white/82 transition hover:text-[#7bd7c9]"
+                      >
+                        {value}
+                      </a>
+                    ) : (
+                      <div className="mt-1 text-sm font-extrabold text-white/82">
+                        {value}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <a
+              href={appUrl}
+              className="btn-lift mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-extrabold text-brand-ink hover:bg-brand-mist"
+            >
+              Open App
+              <ArrowRight size={17} />
             </a>
           </div>
-          <a
-            href={appUrl}
-            className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-extrabold text-brand-ink hover:bg-brand-mist"
-          >
-            Open App
-            <ArrowRight size={17} />
-          </a>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-4 border-t border-white/10 pt-6 text-xs font-bold text-white/45 sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} Incisiō. All rights reserved.</p>
+          <div className="flex flex-wrap gap-3">
+            <span>Secure access</span>
+            <span>Clinical education records</span>
+            <span>Built for web and mobile</span>
+          </div>
         </div>
       </div>
     </footer>
