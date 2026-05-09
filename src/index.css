@@ -347,6 +347,19 @@ a {
   transform: translateY(-1px);
 }
 
+@media (max-width: 640px) {
+  .contact-field {
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .form-input {
+    padding: 11px 12px;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+}
+
 .section-soft {
   position: relative;
   overflow: hidden;

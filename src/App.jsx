@@ -1486,9 +1486,9 @@ function RequestAccess() {
   }
 
   return (
-    <section className="section-soft bg-white py-20">
+    <section id="contact" className="section-soft bg-white py-14 scroll-mt-28 sm:py-20">
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
-        <div className="mb-10 max-w-3xl" data-reveal>
+        <div className="mb-7 max-w-3xl sm:mb-10" data-reveal>
           <p className="text-sm font-extrabold uppercase text-brand-coral">
             Request access
           </p>
@@ -1502,27 +1502,27 @@ function RequestAccess() {
         </div>
 
         <div className="contact-panel grid overflow-hidden rounded-lg border border-brand-line bg-white shadow-soft lg:grid-cols-[0.82fr_1.18fr]" data-reveal>
-          <aside className="relative bg-brand-ink p-6 text-white sm:p-8">
+          <aside className="relative bg-brand-ink p-5 text-white sm:p-8">
             <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-teal via-[#7bd7c9] to-brand-coral" />
-            <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-[#7bd7c9] ring-1 ring-white/12">
+            <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-[#7bd7c9] ring-1 ring-white/12 sm:h-12 sm:w-12">
               <Mail size={22} />
             </div>
-            <h3 className="mt-6 text-2xl font-extrabold">
+            <h3 className="mt-4 text-2xl font-extrabold sm:mt-6">
               Contact details
             </h3>
-            <p className="mt-3 text-sm font-semibold leading-7 text-white/68">
+            <p className="mt-2 text-sm font-semibold leading-6 text-white/68 sm:mt-3 sm:leading-7">
               Use the form for structured requests, or reach out directly using
               the official contact details below.
             </p>
 
-            <div className="mt-8 grid gap-3">
+            <div className="mt-5 grid gap-2 sm:mt-8 sm:gap-3">
               {contactDetails.map(({ label, value, href, icon: Icon }) => (
                 <div
                   key={label}
-                  className="group rounded-lg border border-white/12 bg-white/7 p-4 transition hover:border-[#7bd7c9]/60 hover:bg-white/10"
+                  className="group rounded-lg border border-white/12 bg-white/7 p-3 transition hover:border-[#7bd7c9]/60 hover:bg-white/10 sm:p-4"
                 >
                   <div className="flex items-start gap-3">
-                    <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#7bd7c9]">
+                    <span className="mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#7bd7c9] sm:h-9 sm:w-9">
                       <Icon size={17} />
                     </span>
                     <div className="min-w-0">
@@ -1532,7 +1532,7 @@ function RequestAccess() {
                       {href ? (
                         <a
                           href={href}
-                          className="mt-1 block break-words text-sm font-extrabold text-white transition group-hover:text-[#7bd7c9]"
+                          className="mt-1 block break-all text-sm font-extrabold leading-5 text-white transition group-hover:text-[#7bd7c9] sm:break-words"
                         >
                           {value}
                         </a>
@@ -1552,12 +1552,12 @@ function RequestAccess() {
             onSubmit={handleSubmit}
             className="bg-brand-mist/70 p-5 sm:p-8"
           >
-            <div className="flex flex-col gap-3 border-b border-brand-line pb-5 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex flex-col gap-3 border-b border-brand-line pb-4 sm:flex-row sm:items-center sm:justify-between sm:pb-5">
               <div>
                 <p className="text-xs font-extrabold uppercase text-brand-teal">
                   Access request
                 </p>
-                <h3 className="mt-1 text-2xl font-extrabold text-brand-ink">
+                <h3 className="mt-1 text-2xl font-extrabold leading-tight text-brand-ink">
                   Tell us what you need
                 </h3>
               </div>
@@ -1567,7 +1567,7 @@ function RequestAccess() {
               </span>
             </div>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-5 grid gap-3 sm:mt-6 sm:grid-cols-2 sm:gap-4">
               <label className="contact-field">
                 <span>Full name</span>
                 <input className="form-input" name="name" required placeholder="Dr. Mahad Mohammed" />
@@ -1592,12 +1592,12 @@ function RequestAccess() {
 
             <label className="contact-field mt-4">
               <span>Message</span>
-              <textarea className="form-input min-h-36 resize-y" name="message" placeholder="Tell us about your program, cohort size, and rollout needs." />
+              <textarea className="form-input min-h-28 resize-y sm:min-h-36" name="message" placeholder="Tell us about your program, cohort size, and rollout needs." />
             </label>
 
             <button
               type="submit"
-              className="btn-lift mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-ink px-5 py-4 text-sm font-extrabold text-white shadow-soft hover:bg-brand-teal"
+              className="btn-lift mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-ink px-5 py-3.5 text-sm font-extrabold text-white shadow-soft hover:bg-brand-teal sm:py-4"
             >
               Submit request
               <ArrowRight size={18} />
