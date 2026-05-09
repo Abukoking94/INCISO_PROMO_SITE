@@ -288,18 +288,6 @@ const pricingPlans = [
     ],
     badge: 'Recommended',
   },
-  {
-    role: 'Program',
-    name: 'Residency Pass',
-    price: 'Coming Soon',
-    text: 'Enterprise-level access for residency programs and graduate associations.',
-    items: [
-      { text: 'Institutional Dashboard', muted: true },
-      { text: 'Direct PD/Coordinator Messaging', muted: true },
-      { text: 'Group Analytics', muted: true },
-    ],
-    disabled: true,
-  },
 ]
 
 const faqs = [
@@ -590,7 +578,7 @@ function Hero() {
             A modern all-in-one surgical residency companion built to modernize surgical training through structured tracking, intelligent learning, and accountable supervision.
           </p>
           <p className="mt-4 max-w-2xl break-words text-sm font-semibold leading-7 text-white/72 sm:text-base">
-            Centered around a powerful digital logbook, residents can record operative cases with consultant validation and program director oversight, creating a transparent and reliable training record. Incisiō also features an adaptive QBank powered by spaced repetition, performance analytics, study scheduling tools, and upcoming curated learning resources.
+            Centered around a powerful digital logbook, residents can record operative cases with consultant validation and program director oversight, creating a transparent and reliable training record. Incisiō also features an adaptive QBank powered by spaced repetition, performance analytics, study scheduling tools, and upcoming curated learning resources: all designed to help residents train smarter, retain more, and measure their progress with precision.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
@@ -781,7 +769,7 @@ function Problem() {
             Surgical residency logbooks are still largely paper-based and retrospective.
           </h2>
           <p className="mt-5 text-base font-medium leading-8 text-brand-muted">
-            Residents often record cases in hospital systems or physical register books throughout the year, then reconstruct and format their official logbooks at the end of the academic cycle. This process is time-consuming, difficult to verify, and burdensome for both residents and consultants. Departments struggle to aggregate data, monitor resident progress, and generate meaningful training analytics.
+            Residents often record cases in hospital systems or physical register books throughout the year, then reconstruct and format their official logbooks at the end of the academic cycle. This process is time-consuming, difficult to verify, and burdensome for both residents and consultants. Consultants are expected to retrospectively validate large volumes of cases they may no longer clearly remember, while departments struggle to aggregate data, monitor resident progress, and generate meaningful training analytics. The result is delayed verification, inconsistent documentation, limited oversight, and poor data reliability.
           </p>
         </div>
         <div className="grid gap-3">
@@ -880,7 +868,7 @@ function Platform() {
       <SectionHeader
         eyebrow="Platform"
         title="A complete training operations layer"
-        text="Incisiō unifies operative case logging, consultant validation, program oversight, adaptive question-bank learning, and study tools into a single structured platform: eliminating fragmented paper-based logbooks, retrospective validation, and limited analytics."
+        text="Incisiō unifies operative case logging, consultant validation, program oversight, with the additional features of adaptive question-bank learning, and study tools into a single structured platform: eliminating fragmented paper-based logbooks, retrospective validation, and limited analytics."
       />
       <div className="mx-auto mt-10 grid max-w-7xl gap-4 px-5 sm:px-8 md:grid-cols-2 lg:grid-cols-6">
         {features.map(({ icon: Icon, title, text }, index) => (
@@ -1185,12 +1173,12 @@ function Pricing() {
         <div className="mt-6 flex items-center gap-3" data-reveal>
           <div className="h-px flex-1 bg-brand-line" />
           <span className="rounded-lg bg-white px-4 py-2 text-xs font-extrabold uppercase text-brand-muted shadow-line">
-            Consultant and program access
+            Consultant access
           </span>
           <div className="h-px flex-1 bg-brand-line" />
         </div>
 
-        <div className="mt-6 grid gap-4 lg:grid-cols-3">
+        <div className="mt-6 grid gap-4 lg:grid-cols-2">
           {supportPlans.map((plan) => (
             <PricingPlanCard key={`${plan.role}-${plan.name}`} plan={plan} compact />
           ))}
