@@ -288,6 +288,32 @@ a {
   transform: translateY(-7px) rotateX(1deg);
 }
 
+.contact-panel {
+  position: relative;
+}
+
+.contact-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.contact-field {
+  display: grid;
+  gap: 8px;
+  color: #173f48;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.contact-field span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 18px;
+}
+
 .form-input {
   width: 100%;
   border: 1px solid #dde8ea;

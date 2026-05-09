@@ -1486,95 +1486,130 @@ function RequestAccess() {
   }
 
   return (
-    <section className="bg-white py-20">
-      <div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
-        <div data-reveal>
-          <p className="text-sm font-extrabold uppercase text-brand-teal">
+    <section className="section-soft bg-white py-20">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
+        <div className="mb-10 max-w-3xl" data-reveal>
+          <p className="text-sm font-extrabold uppercase text-brand-coral">
             Request access
           </p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight text-brand-ink sm:text-4xl">
-            Give interested departments a clear next step.
+            Start a direct access conversation.
           </h2>
           <p className="mt-5 text-base font-medium leading-8 text-brand-muted">
-            Residents, consultants, and coordinators can use this section to
-            begin an access conversation.
+            Residents, consultants, and coordinators can share their program
+            context or contact the Incisiō team directly.
           </p>
-          <div className="mt-6 rounded-lg bg-brand-mist p-5 text-sm font-bold leading-7 text-brand-text">
-            <Mail className="mb-3 text-brand-teal" size={22} />
-            Share your program details, expected cohort size, and preferred
-            rollout timeline.
-          </div>
-          <div className="mt-4 grid gap-3">
-            {contactDetails.map(({ label, value, href, icon: Icon }) => (
-              <div
-                key={label}
-                className="flex items-center justify-between gap-4 rounded-lg border border-brand-line bg-white px-4 py-3 text-sm shadow-line"
-              >
-                <span className="flex items-center gap-2 font-extrabold text-brand-ink">
-                  <Icon size={16} className="text-brand-teal" />
-                  {label}
-                </span>
-                {href ? (
-                  <a
-                    href={href}
-                    className="text-right font-bold text-brand-teal transition hover:text-brand-ink"
-                  >
-                    {value}
-                  </a>
-                ) : (
-                  <span className="text-right font-bold text-brand-muted">
-                    {value}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="premium-card rounded-lg border border-brand-line bg-brand-mist p-5 shadow-line"
-          data-reveal
-        >
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm font-extrabold text-brand-ink">
-              Full name
-              <input className="form-input" name="name" required placeholder="Dr. Mahad Mohammed" />
-            </label>
-            <label className="grid gap-2 text-sm font-extrabold text-brand-ink">
-              Email
-              <input className="form-input" name="email" required type="email" placeholder="name@institution.edu" />
-            </label>
-            <label className="grid gap-2 text-sm font-extrabold text-brand-ink">
-              Institution
-              <input className="form-input" name="institution" required placeholder="University / Hospital" />
-            </label>
-            <label className="grid gap-2 text-sm font-extrabold text-brand-ink">
-              Role
-              <select className="form-input" name="role" defaultValue="Resident">
-                <option>Resident</option>
-                <option>Consultant</option>
-                <option>Coordinator</option>
-              </select>
-            </label>
-          </div>
-          <label className="mt-4 grid gap-2 text-sm font-extrabold text-brand-ink">
-            Message
-            <textarea className="form-input min-h-32 resize-y" name="message" placeholder="Tell us about your program, cohort size, and rollout needs." />
-          </label>
-          <button
-            type="submit"
-            className="btn-lift mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-ink px-5 py-4 text-sm font-extrabold text-white hover:bg-brand-teal"
-          >
-            Submit request
-            <ArrowRight size={18} />
-          </button>
-          {sent && (
-            <p className="mt-4 rounded-lg bg-white p-4 text-sm font-bold text-brand-teal">
-              Thank you. Your request has been received.
+        <div className="contact-panel grid overflow-hidden rounded-lg border border-brand-line bg-white shadow-soft lg:grid-cols-[0.82fr_1.18fr]" data-reveal>
+          <aside className="relative bg-brand-ink p-6 text-white sm:p-8">
+            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-teal via-[#7bd7c9] to-brand-coral" />
+            <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-white/10 text-[#7bd7c9] ring-1 ring-white/12">
+              <Mail size={22} />
+            </div>
+            <h3 className="mt-6 text-2xl font-extrabold">
+              Contact details
+            </h3>
+            <p className="mt-3 text-sm font-semibold leading-7 text-white/68">
+              Use the form for structured requests, or reach out directly using
+              the official contact details below.
             </p>
-          )}
-        </form>
+
+            <div className="mt-8 grid gap-3">
+              {contactDetails.map(({ label, value, href, icon: Icon }) => (
+                <div
+                  key={label}
+                  className="group rounded-lg border border-white/12 bg-white/7 p-4 transition hover:border-[#7bd7c9]/60 hover:bg-white/10"
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-white/10 text-[#7bd7c9]">
+                      <Icon size={17} />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-xs font-extrabold uppercase text-white/45">
+                        {label}
+                      </p>
+                      {href ? (
+                        <a
+                          href={href}
+                          className="mt-1 block break-words text-sm font-extrabold text-white transition group-hover:text-[#7bd7c9]"
+                        >
+                          {value}
+                        </a>
+                      ) : (
+                        <p className="mt-1 text-sm font-extrabold text-white">
+                          {value}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </aside>
+
+          <form
+            onSubmit={handleSubmit}
+            className="bg-brand-mist/70 p-5 sm:p-8"
+          >
+            <div className="flex flex-col gap-3 border-b border-brand-line pb-5 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-xs font-extrabold uppercase text-brand-teal">
+                  Access request
+                </p>
+                <h3 className="mt-1 text-2xl font-extrabold text-brand-ink">
+                  Tell us what you need
+                </h3>
+              </div>
+              <span className="inline-flex w-fit items-center gap-2 rounded-lg bg-white px-3 py-2 text-xs font-extrabold text-brand-teal shadow-line">
+                <CheckCircle2 size={15} />
+                Direct contact available
+              </span>
+            </div>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <label className="contact-field">
+                <span>Full name</span>
+                <input className="form-input" name="name" required placeholder="Dr. Mahad Mohammed" />
+              </label>
+              <label className="contact-field">
+                <span>Email</span>
+                <input className="form-input" name="email" required type="email" placeholder="name@institution.edu" />
+              </label>
+              <label className="contact-field">
+                <span>Institution</span>
+                <input className="form-input" name="institution" required placeholder="University / Hospital" />
+              </label>
+              <label className="contact-field">
+                <span>Role</span>
+                <select className="form-input" name="role" defaultValue="Resident">
+                  <option>Resident</option>
+                  <option>Consultant</option>
+                  <option>Coordinator</option>
+                </select>
+              </label>
+            </div>
+
+            <label className="contact-field mt-4">
+              <span>Message</span>
+              <textarea className="form-input min-h-36 resize-y" name="message" placeholder="Tell us about your program, cohort size, and rollout needs." />
+            </label>
+
+            <button
+              type="submit"
+              className="btn-lift mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-ink px-5 py-4 text-sm font-extrabold text-white shadow-soft hover:bg-brand-teal"
+            >
+              Submit request
+              <ArrowRight size={18} />
+            </button>
+            {sent && (
+              <p className="mt-4 flex items-center gap-3 rounded-lg border border-brand-teal/20 bg-white p-4 text-sm font-bold text-brand-teal shadow-line">
+                <CheckCircle2 size={18} />
+                Thank you. Your request has been received.
+              </p>
+            )}
+          </form>
+        </div>
       </div>
     </section>
   )
