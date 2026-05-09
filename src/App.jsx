@@ -22,6 +22,7 @@ import {
   Menu,
   MessageSquareText,
   MonitorSmartphone,
+  Phone,
   SearchCheck,
   ShieldCheck,
   Sparkles,
@@ -33,6 +34,27 @@ import {
 import { useEffect, useRef, useState } from 'react'
 
 const appUrl = 'https://resident-companion.web.app'
+
+const contactDetails = [
+  {
+    label: 'Contact name',
+    value: 'Dr. Mahad',
+    href: null,
+    icon: UserCheck,
+  },
+  {
+    label: 'Email',
+    value: 'residentcompanion@gmail.com',
+    href: 'mailto:residentcompanion@gmail.com',
+    icon: Mail,
+  },
+  {
+    label: 'Tel',
+    value: '+251-911053336',
+    href: 'tel:+251911053336',
+    icon: Phone,
+  },
+]
 
 const navItems = [
   ['Platform', '#platform'],
@@ -1482,6 +1504,31 @@ function RequestAccess() {
             Share your program details, expected cohort size, and preferred
             rollout timeline.
           </div>
+          <div className="mt-4 grid gap-3">
+            {contactDetails.map(({ label, value, href, icon: Icon }) => (
+              <div
+                key={label}
+                className="flex items-center justify-between gap-4 rounded-lg border border-brand-line bg-white px-4 py-3 text-sm shadow-line"
+              >
+                <span className="flex items-center gap-2 font-extrabold text-brand-ink">
+                  <Icon size={16} className="text-brand-teal" />
+                  {label}
+                </span>
+                {href ? (
+                  <a
+                    href={href}
+                    className="text-right font-bold text-brand-teal transition hover:text-brand-ink"
+                  >
+                    {value}
+                  </a>
+                ) : (
+                  <span className="text-right font-bold text-brand-muted">
+                    {value}
+                  </span>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         <form
@@ -1589,7 +1636,7 @@ function FAQItem({ faq, defaultOpen = false }) {
 function Footer() {
   return (
     <footer className="bg-brand-ink px-5 py-10 text-white sm:px-8">
-      <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
         <div className="flex items-center gap-3">
           <img
           src="/incisio-icon.png"
@@ -1603,13 +1650,24 @@ function Footer() {
             </div>
           </div>
         </div>
-        <a
-          href={appUrl}
-          className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-extrabold text-brand-ink hover:bg-brand-mist"
-        >
-          Open App
-          <ArrowRight size={17} />
-        </a>
+        <div className="flex flex-col gap-4 lg:items-end">
+          <div className="flex flex-wrap gap-3 text-sm font-semibold text-white/75">
+            <span>Dr. Mahad</span>
+            <a className="hover:text-white" href="mailto:residentcompanion@gmail.com">
+              residentcompanion@gmail.com
+            </a>
+            <a className="hover:text-white" href="tel:+251911053336">
+              +251-911053336
+            </a>
+          </div>
+          <a
+            href={appUrl}
+            className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-3 text-sm font-extrabold text-brand-ink hover:bg-brand-mist"
+          >
+            Open App
+            <ArrowRight size={17} />
+          </a>
+        </div>
       </div>
     </footer>
   )
