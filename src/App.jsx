@@ -188,6 +188,7 @@ const security = [
 const roleTour = {
   Resident: {
     icon: Stethoscope,
+    image: '/resident-dashboard-app-screenshot.png',
     headline: 'A focused workspace for every procedure and every learning signal.',
     subline: 'Residents can log procedures, tag supervisors, add assistants, review progress, and continue quiz preparation from the same place.',
     stats: [
@@ -199,6 +200,7 @@ const roleTour = {
   },
   Consultant: {
     icon: UserCheck,
+    image: '/consultant-dashboard-app-screenshot.png',
     headline: 'Fast validation without losing clinical context.',
     subline: 'Consultants see pending cases, approve or reject submissions, leave feedback, and export reviewed work when needed.',
     stats: [
@@ -210,6 +212,7 @@ const roleTour = {
   },
   Coordinator: {
     icon: UsersRound,
+    image: '/coordinator-dashboard-app-screenshot.png',
     headline: 'Department oversight that stays connected to resident records.',
     subline: 'Coordinators can monitor residents, review consultant requests, and understand institutional procedure distribution.',
     stats: [
@@ -801,7 +804,7 @@ function ProductTour() {
       />
 
       <div className="mx-auto mt-10 grid max-w-7xl gap-6 px-5 sm:px-8 lg:grid-cols-[0.45fr_0.55fr] lg:items-stretch">
-        <div className="grid gap-3" data-reveal>
+        <div className="grid auto-rows-max content-start gap-3 self-start" data-reveal>
           {Object.keys(roleTour).map((role) => (
             <button
               key={role}
@@ -835,6 +838,14 @@ function ProductTour() {
                   </h3>
                 </div>
               </div>
+            </div>
+
+            <div className="mt-5 overflow-hidden rounded-lg border border-brand-line bg-brand-ink/5 shadow-line">
+              <img
+                src={current.image}
+                alt={`${active} dashboard from the Incisiō application`}
+                className="block max-h-[520px] w-full object-cover object-top"
+              />
             </div>
 
             <p className="mt-5 text-sm font-medium leading-7 text-brand-muted">
