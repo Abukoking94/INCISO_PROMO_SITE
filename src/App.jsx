@@ -7,13 +7,11 @@ import {
   CheckCircle2,
   ChevronDown,
   ClipboardCheck,
-  ClipboardList,
   ExternalLink,
   FileCheck2,
   FileText,
   GraduationCap,
   Library,
-  LineChart,
   LockKeyhole,
   Mail,
   Menu,
@@ -565,14 +563,14 @@ function Hero() {
           <div className="glass-chip mb-6 inline-flex max-w-full items-start gap-2 rounded-lg border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold leading-6 text-white/88 backdrop-blur">
             <Sparkles className="mt-1 shrink-0" size={16} />
             <span className="min-w-0 break-words">
-              Built for surgeons. Designed for progress.
+              Digital logbook, validation, and learning in one place.
             </span>
           </div>
           <h1 className="text-4xl font-extrabold leading-[1.02] sm:text-6xl lg:text-7xl">
               Incisiō
           </h1>
           <p className="mt-4 max-w-2xl text-xl font-extrabold leading-tight text-white sm:text-3xl">
-            Built for surgeons. Designed for progress.
+            Digital logbook, validation, and learning in one place.
           </p>
           <p className="mt-5 max-w-2xl break-words text-base font-semibold leading-8 text-white/78 sm:text-lg">
             A modern all-in-one surgical residency companion built to modernize surgical training through structured tracking, intelligent learning, and accountable supervision.
@@ -613,39 +611,6 @@ function Hero() {
 }
 
 function ProductPreview() {
-  const screens = [
-    {
-      title: 'Resident logbook dashboard',
-      subtitle: 'Case records, learning progress, and pending reviews',
-      stats: [['Cases', 'Logged'], ['QBank', 'Adaptive'], ['Reviews', 'Pending']],
-      rows: [['New procedure entry', 'Structured capture'], ['Personal progress', 'Analytics ready'], ['Study schedule', 'Spaced repetition'], ['Learning resources', 'Curated library']],
-      caption: 'Resident view: daily operative cases, study tools, and progress signals in one workspace.',
-    },
-    {
-      title: 'Consultant review queue',
-      subtitle: 'Validation, feedback, and reviewed activity',
-      stats: [['Reviews', 'Assigned'], ['Feedback', 'Recorded'], ['Cases', 'Verified']],
-      rows: [['Pending procedures', 'Ready to review'], ['Resident activity', 'Organized'], ['Validation history', 'Traceable'], ['Exported records', 'Controlled']],
-      caption: 'Consultant view: faster validation without end-of-year signature bottlenecks.',
-    },
-    {
-      title: 'Coordinator program view',
-      subtitle: 'Training oversight, exposure patterns, and reports',
-      stats: [['Residents', 'Tracked'], ['Exposure', 'Visible'], ['Reports', 'Ready']],
-      rows: [['Procedure volume', 'Centralized'], ['Validation flow', 'Monitored'], ['Resident progress', 'Comparable'], ['Program analytics', 'Actionable']],
-      caption: 'Coordinator view: program-level oversight for case exposure and residency progression.',
-    },
-  ]
-  const [activeIndex, setActiveIndex] = useState(0)
-  const active = screens[activeIndex]
-
-  useEffect(() => {
-    const timer = window.setInterval(() => {
-      setActiveIndex((index) => (index + 1) % screens.length)
-    }, 4200)
-    return () => window.clearInterval(timer)
-  }, [screens.length])
-
   return (
     <div
       className="float-panel relative mx-auto w-full min-w-0 max-w-[560px] lg:mx-0 lg:justify-self-end"
@@ -655,83 +620,12 @@ function ProductPreview() {
         Live web app
       </div>
       <div className="premium-frame rounded-lg border border-white/18 bg-white/12 p-3 shadow-soft backdrop-blur-md">
-        <div className="overflow-hidden rounded-lg bg-brand-mist text-brand-text">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-line bg-white px-4 py-4">
-            <div className="flex items-center gap-3">
-              <img
-              src="/incisio-icon.png"
-                alt=""
-                className="h-10 w-10 rounded-lg object-cover"
-              />
-              <div>
-                <div className="text-sm font-extrabold text-brand-ink">
-                  {active.title}
-                </div>
-                <div className="text-xs font-semibold text-brand-muted">
-                  {active.subtitle}
-                </div>
-              </div>
-            </div>
-            <span className="rounded-lg bg-brand-ink px-2 py-2 text-[11px] font-bold text-white sm:px-3 sm:text-xs">
-              Synced
-            </span>
-          </div>
-
-          <div className="grid gap-4 p-4">
-            <div className="premium-dark-card rounded-lg bg-brand-ink p-4 text-white">
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-extrabold">
-                  Platform preview
-                </span>
-                <LineChart size={18} />
-              </div>
-              <div className="mt-4 grid gap-2 text-center sm:grid-cols-3">
-                {active.stats.map(([value, label]) => (
-                  <div key={label} className="metric-tile rounded-lg bg-white/10 p-3">
-                    <div className="metric-title text-base font-extrabold sm:text-lg lg:text-xl">{value}</div>
-                    <div className="mt-1 text-[11px] font-bold text-white/70">
-                      {label}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              {active.rows.map(([label, value]) => (
-                <div
-                  key={label}
-                  className="premium-card rounded-lg border border-brand-line bg-white p-3"
-                >
-                  <div className="text-xs font-bold uppercase text-brand-muted">
-                    {label}
-                  </div>
-                  <div className="mt-1 text-sm font-extrabold text-brand-ink">
-                    {value}
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="premium-card rounded-lg border border-brand-line bg-white p-4">
-              <div className="flex items-center gap-3">
-                <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-teal text-white">
-                  <ClipboardList size={18} />
-                </div>
-                <div>
-                  <div className="text-sm font-extrabold text-brand-ink">
-                    {active.title}
-                  </div>
-                  <div className="text-xs font-semibold text-brand-muted">
-                    {active.caption}
-                  </div>
-                </div>
-              </div>
-              <div className="mt-4 h-2 rounded-full bg-brand-line">
-                <div className="progress-glow h-2 w-3/4 rounded-full bg-brand-teal" />
-              </div>
-            </div>
-          </div>
+        <div className="overflow-hidden rounded-lg bg-brand-ink/30 p-2">
+          <img
+            src="/resident-dashboard-app-screenshot.png"
+            alt="Resident logbook dashboard from the Incisiō application"
+            className="block w-full rounded-lg border border-white/12 object-cover object-top shadow-soft"
+          />
         </div>
       </div>
     </div>
