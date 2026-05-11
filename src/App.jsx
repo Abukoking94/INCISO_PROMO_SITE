@@ -7,6 +7,7 @@ import {
   CheckCircle2,
   ChevronDown,
   ClipboardCheck,
+  Download,
   ExternalLink,
   FileCheck2,
   FileText,
@@ -28,6 +29,7 @@ import {
 import { useEffect, useRef, useState } from 'react'
 
 const appUrl = 'https://resident-companion.web.app'
+const apkDownloadUrl = '/downloads/incisio-android.apk'
 
 const contactDetails = [
   {
@@ -439,6 +441,14 @@ function SiteHeader() {
 
         <div className="hidden items-center gap-3 sm:flex">
           <a
+            href={apkDownloadUrl}
+            download
+            className="btn-lift inline-flex items-center gap-2 rounded-lg border border-white/28 px-4 py-3 text-sm font-extrabold text-white hover:bg-white/10"
+          >
+            Download APK
+            <Download size={17} />
+          </a>
+          <a
             href={appUrl}
             className="btn-lift inline-flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-extrabold text-brand-ink shadow-soft hover:bg-brand-mist"
           >
@@ -470,6 +480,14 @@ function SiteHeader() {
                 {label}
               </a>
             ))}
+            <a
+              href={apkDownloadUrl}
+              download
+              className="mt-2 flex items-center justify-center gap-2 rounded-lg border border-white/18 px-4 py-3 text-sm font-extrabold text-white"
+            >
+              Download APK
+              <Download size={16} />
+            </a>
             <a
               href={appUrl}
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-extrabold text-brand-ink"
@@ -583,8 +601,16 @@ function Hero() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a
-              href={appUrl}
+              href={apkDownloadUrl}
+              download
               className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-white px-5 py-4 text-sm font-extrabold text-brand-ink shadow-soft hover:bg-brand-mist"
+            >
+              Download Android APK
+              <Download size={18} />
+            </a>
+            <a
+              href={appUrl}
+              className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg border border-white/32 px-5 py-4 text-sm font-extrabold text-white hover:bg-white/10"
             >
               Launch Web App
               <ArrowRight size={18} />
@@ -804,7 +830,7 @@ function ProductTour() {
       />
 
       <div className="mx-auto mt-10 grid max-w-7xl gap-6 px-5 sm:px-8 lg:grid-cols-[0.45fr_0.55fr] lg:items-stretch">
-        <div className="grid auto-rows-max content-start gap-3 self-start" data-reveal>
+        <div className="grid gap-3" data-reveal>
           {Object.keys(roleTour).map((role) => (
             <button
               key={role}
@@ -1094,13 +1120,23 @@ function Pricing() {
         <p className="text-sm font-semibold text-brand-muted">
           In-app payment submission supports CBE, Telebirr, and Ebirr.
         </p>
-        <a
-          href={appUrl}
-          className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-extrabold text-brand-ink shadow-line hover:bg-brand-ink hover:text-white"
-        >
-          Open App
-          <ArrowRight size={17} />
-        </a>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <a
+            href={apkDownloadUrl}
+            download
+            className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-brand-ink px-4 py-3 text-sm font-extrabold text-white shadow-line hover:bg-brand-teal"
+          >
+            Download APK
+            <Download size={17} />
+          </a>
+          <a
+            href={appUrl}
+            className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-extrabold text-brand-ink shadow-line hover:bg-brand-ink hover:text-white"
+          >
+            Open App
+            <ArrowRight size={17} />
+          </a>
+        </div>
       </div>
     </section>
   )
@@ -1406,6 +1442,14 @@ function Footer() {
             </div>
 
             <div className="grid gap-3 lg:justify-items-end">
+              <a
+                href={apkDownloadUrl}
+                download
+                className="btn-lift inline-flex w-fit items-center justify-center gap-2 rounded-lg border border-white/16 px-5 py-2.5 text-sm font-extrabold text-white hover:bg-white/10"
+              >
+                Download APK
+                <Download size={16} />
+              </a>
               <a
                 href={appUrl}
                 className="btn-lift inline-flex w-fit items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-extrabold text-brand-ink hover:bg-brand-mist"
