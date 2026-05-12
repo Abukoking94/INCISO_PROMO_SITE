@@ -866,8 +866,8 @@ function ProductTour() {
         </div>
 
         <div className="premium-card rounded-lg border border-brand-line bg-brand-mist p-2.5 shadow-line" data-reveal>
-          <div className="rounded-lg bg-white p-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-line pb-3">
+          <div className="grid gap-4 rounded-lg bg-white p-4 lg:grid-cols-[minmax(0,0.58fr)_minmax(300px,0.42fr)]">
+            <div className="order-2 flex flex-wrap items-center justify-between gap-3 border-b border-brand-line pb-3 lg:col-start-2">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-ink text-white">
                   <Icon size={20} />
@@ -883,19 +883,19 @@ function ProductTour() {
               </div>
             </div>
 
-            <div className="mt-4 overflow-hidden rounded-lg border border-brand-line bg-brand-ink/5 shadow-line">
+            <div className="order-1 overflow-hidden rounded-lg border border-brand-line bg-brand-ink/5 shadow-line lg:row-span-4 lg:min-h-[430px]">
               <img
                 src={current.image}
                 alt={`${active} dashboard from the Incisiō application`}
-                className="block h-[220px] w-full object-cover object-top"
+                className="block h-[220px] w-full object-cover object-top lg:h-full"
               />
             </div>
 
-            <p className="mt-3 text-xs font-medium leading-5 text-brand-muted">
+            <p className="order-3 text-xs font-medium leading-5 text-brand-muted lg:col-start-2">
               {current.subline}
             </p>
 
-            <div className="mt-3 grid gap-2 sm:grid-cols-3">
+            <div className="order-4 grid gap-2 sm:grid-cols-3 lg:col-start-2 lg:grid-cols-1">
               {current.stats.map(([label, value]) => (
                 <div key={label} className="rounded-lg bg-brand-mist px-3 py-2">
                   <div className="text-[10px] font-bold uppercase text-brand-muted">
@@ -908,7 +908,7 @@ function ProductTour() {
               ))}
             </div>
 
-            <div className="mt-3 grid gap-2">
+            <div className="order-5 grid gap-2 lg:col-start-2">
               {current.bullets.map((item) => (
                 <div key={item} className="flex items-center gap-2 rounded-lg border border-brand-line px-3 py-1.5 text-xs font-bold text-brand-text">
                   <CheckCircle2 className="shrink-0 text-brand-teal" size={14} />
