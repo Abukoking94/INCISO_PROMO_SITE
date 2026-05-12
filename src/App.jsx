@@ -846,21 +846,21 @@ function ProductTour() {
         text="A serious training system has to feel different for each responsibility. Incisiō keeps the interface focused while the underlying record stays connected."
       />
 
-      <div className="mx-auto mt-7 grid max-w-6xl gap-4 px-5 sm:px-8 lg:grid-cols-[210px_1fr] lg:items-start">
-        <div className="grid gap-2" data-reveal>
+      <div className="mx-auto mt-7 grid max-w-6xl gap-4 px-5 sm:px-8 lg:grid-cols-[160px_1fr] lg:items-start">
+        <div className="grid gap-1.5" data-reveal>
           {Object.keys(roleTour).map((role) => (
             <button
               key={role}
               type="button"
               onClick={() => setActive(role)}
-              className={`tour-tab flex min-h-[48px] items-center justify-between rounded-lg border px-4 py-2.5 text-left transition ${
+              className={`tour-tab flex min-h-[36px] items-center justify-between rounded-lg border px-3 py-1.5 text-left transition ${
                 active === role
                   ? 'border-brand-teal bg-brand-ink text-white shadow-soft'
                   : 'border-brand-line bg-brand-mist text-brand-ink hover:border-brand-teal/40 hover:bg-white'
               }`}
             >
-              <span className="text-sm font-extrabold">{role}</span>
-              <ArrowRight size={15} />
+              <span className="text-xs font-extrabold">{role}</span>
+              <ArrowRight size={12} />
             </button>
           ))}
         </div>
@@ -883,11 +883,11 @@ function ProductTour() {
               </div>
             </div>
 
-            <div className="order-1 overflow-hidden rounded-lg border border-brand-line bg-brand-ink/5 shadow-line lg:row-span-4 lg:min-h-[430px]">
+            <div className="order-1 flex items-center justify-center overflow-hidden rounded-lg border border-brand-line bg-brand-ink/5 p-3 shadow-line lg:row-span-4 lg:min-h-[330px]">
               <img
                 src={current.image}
                 alt={`${active} dashboard from the Incisiō application`}
-                className="block h-[220px] w-full object-cover object-top lg:h-full"
+                className="block max-h-[185px] w-full rounded-md object-contain object-center lg:max-h-[300px]"
               />
             </div>
 
