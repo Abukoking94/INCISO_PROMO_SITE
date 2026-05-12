@@ -801,47 +801,26 @@ function Platform() {
         title="A complete training operations layer"
         text="Incisiō unifies operative case logging, consultant validation, program oversight, with the additional features of adaptive question-bank learning, and study tools into a single structured platform: eliminating fragmented paper-based logbooks, retrospective validation, and limited analytics."
       />
-      <div className="mx-auto mt-10 grid max-w-7xl auto-rows-fr gap-4 px-5 sm:px-8 md:grid-cols-2 xl:grid-cols-12">
+      <div className="mx-auto mt-10 grid max-w-7xl gap-5 px-5 sm:px-8 md:grid-cols-2 lg:grid-cols-3">
         {features.map(({ icon: Icon, title, text }, index) => (
           <article
             key={title}
-            className={`premium-card group flex min-h-[230px] flex-col rounded-lg border shadow-line ${
-              index === 0
-                ? 'bg-brand-ink p-7 text-white md:col-span-2 xl:col-span-6 xl:row-span-2'
-                : 'border-brand-line bg-white p-6 xl:col-span-3'
-            }`}
+            className="premium-card group flex min-h-[255px] flex-col rounded-lg border border-brand-line bg-white p-6 shadow-line"
             style={{ '--reveal-delay': `${index * 70}ms` }}
             data-reveal
           >
             <div className="flex items-start justify-between gap-4">
-              <div
-                className={`flex h-12 w-12 items-center justify-center rounded-lg ${
-                  index === 0 ? 'bg-white text-brand-ink' : 'bg-brand-ink text-white'
-                }`}
-              >
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-ink text-white">
                 <Icon size={22} />
               </div>
-              <span
-                className={`rounded-full px-3 py-1 text-xs font-extrabold ${
-                  index === 0 ? 'bg-white/10 text-white/72' : 'bg-brand-mist text-brand-muted'
-                }`}
-              >
+              <span className="rounded-full bg-brand-mist px-3 py-1 text-xs font-extrabold text-brand-muted">
                 0{index + 1}
               </span>
             </div>
-            <div className="mt-auto pt-10">
-              <h3
-                className={`font-extrabold leading-tight ${
-                  index === 0 ? 'max-w-md text-3xl' : 'text-xl text-brand-ink'
-                }`}
-              >
-                {title}
-              </h3>
-              <p
-                className={`mt-4 font-medium leading-7 ${
-                  index === 0 ? 'max-w-xl text-base text-white/72' : 'text-sm text-brand-muted'
-                }`}
-              >
+
+            <div className="pt-8">
+              <h3 className="text-xl font-extrabold leading-tight text-brand-ink">{title}</h3>
+              <p className="mt-4 text-sm font-medium leading-7 text-brand-muted">
                 {text}
               </p>
             </div>
