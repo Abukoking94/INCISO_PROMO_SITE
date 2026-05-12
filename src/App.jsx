@@ -20,7 +20,6 @@ import {
   Phone,
   SearchCheck,
   ShieldCheck,
-  Sparkles,
   Stethoscope,
   UserCheck,
   UsersRound,
@@ -587,12 +586,6 @@ function Hero() {
         className="relative z-10 mx-auto grid w-full max-w-7xl gap-12 px-5 pb-16 pt-32 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:pb-20 lg:pt-36"
       >
         <div className="min-w-0 max-w-3xl" data-reveal>
-          <div className="glass-chip mb-6 inline-flex max-w-full items-start gap-2 rounded-lg border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold leading-6 text-white/88 backdrop-blur">
-            <Sparkles className="mt-1 shrink-0" size={16} />
-            <span className="min-w-0 break-words">
-              Digital logbook, validation, and learning in one place.
-            </span>
-          </div>
           <h1 className="text-4xl font-extrabold leading-[1.02] sm:text-6xl lg:text-7xl">
               Incisiō
           </h1>
@@ -630,15 +623,6 @@ function Hero() {
               Explore Platform
               <MonitorSmartphone size={18} />
             </a>
-          </div>
-          <div className="mt-8 flex max-w-2xl flex-wrap gap-x-5 gap-y-2 text-sm font-extrabold uppercase tracking-[0.08em] text-white/70">
-            {['Residents', 'Consultants', 'Coordinators'].map((label) => (
-              <span
-                key={label}
-              >
-                {label}
-              </span>
-            ))}
           </div>
         </div>
         <ProductPreview />
