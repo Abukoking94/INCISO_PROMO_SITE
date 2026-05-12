@@ -471,13 +471,13 @@ function SiteHeader() {
 
       {open && (
         <div className="mx-auto mt-2 max-w-7xl px-5 lg:hidden">
-          <div className="rounded-lg border border-white/16 bg-brand-ink/92 p-3 shadow-soft backdrop-blur-xl">
+          <div className="rounded-lg border border-white/22 bg-brand-ink/96 p-3 shadow-soft backdrop-blur-xl">
             {navItems.map(([label, href]) => (
               <a
                 key={label}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-4 py-3 text-sm font-extrabold text-white/84 hover:bg-white/10"
+                className="block rounded-lg px-4 py-3 text-sm font-extrabold text-white shadow-sm hover:bg-white/12"
               >
                 {label}
               </a>
