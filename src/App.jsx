@@ -801,11 +801,13 @@ function Platform() {
         title="A complete training operations layer"
         text="Incisiō unifies operative case logging, consultant validation, program oversight, with the additional features of adaptive question-bank learning, and study tools into a single structured platform: eliminating fragmented paper-based logbooks, retrospective validation, and limited analytics."
       />
-      <div className="mx-auto mt-10 grid max-w-7xl gap-5 px-5 sm:px-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto mt-10 grid max-w-7xl gap-5 px-5 sm:px-8 md:grid-cols-2 lg:grid-cols-12">
         {features.map(({ icon: Icon, title, text }, index) => (
           <article
             key={title}
-            className="premium-card group flex min-h-[255px] flex-col rounded-lg border border-brand-line bg-white p-6 shadow-line"
+            className={`premium-card group flex min-h-[255px] flex-col rounded-lg border border-brand-line bg-white p-6 shadow-line ${
+              index < 3 ? 'lg:col-span-4' : 'lg:col-span-3'
+            }`}
             style={{ '--reveal-delay': `${index * 70}ms` }}
             data-reveal
           >
