@@ -839,21 +839,21 @@ function ProductTour() {
   const Icon = current.icon
 
   return (
-    <section id="tour" className="bg-white py-14">
+    <section id="tour" className="bg-white py-12">
       <SectionHeader
         eyebrow="Interactive tour"
         title="See how each role experiences the platform"
         text="A serious training system has to feel different for each responsibility. Incisiō keeps the interface focused while the underlying record stays connected."
       />
 
-      <div className="mx-auto mt-8 grid max-w-6xl gap-5 px-5 sm:px-8 lg:grid-cols-[230px_1fr] lg:items-start">
+      <div className="mx-auto mt-7 grid max-w-6xl gap-4 px-5 sm:px-8 lg:grid-cols-[210px_1fr] lg:items-start">
         <div className="grid gap-2" data-reveal>
           {Object.keys(roleTour).map((role) => (
             <button
               key={role}
               type="button"
               onClick={() => setActive(role)}
-              className={`tour-tab flex min-h-[58px] items-center justify-between rounded-lg border px-4 py-3 text-left transition ${
+              className={`tour-tab flex min-h-[48px] items-center justify-between rounded-lg border px-4 py-2.5 text-left transition ${
                 active === role
                   ? 'border-brand-teal bg-brand-ink text-white shadow-soft'
                   : 'border-brand-line bg-brand-mist text-brand-ink hover:border-brand-teal/40 hover:bg-white'
@@ -865,9 +865,9 @@ function ProductTour() {
           ))}
         </div>
 
-        <div className="premium-card rounded-lg border border-brand-line bg-brand-mist p-3 shadow-line" data-reveal>
+        <div className="premium-card rounded-lg border border-brand-line bg-brand-mist p-2.5 shadow-line" data-reveal>
           <div className="rounded-lg bg-white p-4">
-            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-line pb-4">
+            <div className="flex flex-wrap items-center justify-between gap-3 border-b border-brand-line pb-3">
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand-ink text-white">
                   <Icon size={20} />
@@ -887,31 +887,31 @@ function ProductTour() {
               <img
                 src={current.image}
                 alt={`${active} dashboard from the Incisiō application`}
-                className="block max-h-[360px] w-full object-cover object-top"
+                className="block h-[220px] w-full object-cover object-top"
               />
             </div>
 
-            <p className="mt-4 text-xs font-medium leading-6 text-brand-muted">
+            <p className="mt-3 text-xs font-medium leading-5 text-brand-muted">
               {current.subline}
             </p>
 
-            <div className="mt-4 grid gap-2 sm:grid-cols-3">
+            <div className="mt-3 grid gap-2 sm:grid-cols-3">
               {current.stats.map(([label, value]) => (
-                <div key={label} className="rounded-lg bg-brand-mist p-3">
-                  <div className="text-xs font-bold uppercase text-brand-muted">
+                <div key={label} className="rounded-lg bg-brand-mist px-3 py-2">
+                  <div className="text-[10px] font-bold uppercase text-brand-muted">
                     {label}
                   </div>
-                  <div className="mt-1 text-base font-extrabold text-brand-ink">
+                  <div className="mt-0.5 text-sm font-extrabold text-brand-ink">
                     {value}
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-4 grid gap-2">
+            <div className="mt-3 grid gap-2">
               {current.bullets.map((item) => (
-                <div key={item} className="flex items-center gap-2 rounded-lg border border-brand-line px-3 py-2 text-xs font-bold text-brand-text">
-                  <CheckCircle2 className="shrink-0 text-brand-teal" size={15} />
+                <div key={item} className="flex items-center gap-2 rounded-lg border border-brand-line px-3 py-1.5 text-xs font-bold text-brand-text">
+                  <CheckCircle2 className="shrink-0 text-brand-teal" size={14} />
                   {item}
                 </div>
               ))}
