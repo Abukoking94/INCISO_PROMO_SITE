@@ -846,21 +846,21 @@ function ProductTour() {
         text="A serious training system has to feel different for each responsibility. Incisiō keeps the interface focused while the underlying record stays connected."
       />
 
-      <div className="mx-auto mt-10 grid max-w-7xl gap-6 px-5 sm:px-8 lg:grid-cols-[0.45fr_0.55fr] lg:items-stretch">
-        <div className="grid gap-3" data-reveal>
+      <div className="mx-auto mt-10 grid max-w-7xl gap-6 px-5 sm:px-8 lg:grid-cols-[260px_1fr] lg:items-start">
+        <div className="grid gap-2" data-reveal>
           {Object.keys(roleTour).map((role) => (
             <button
               key={role}
               type="button"
               onClick={() => setActive(role)}
-              className={`tour-tab flex items-center justify-between rounded-lg border p-4 text-left transition ${
+              className={`tour-tab flex min-h-[58px] items-center justify-between rounded-lg border px-4 py-3 text-left transition ${
                 active === role
                   ? 'border-brand-teal bg-brand-ink text-white shadow-soft'
                   : 'border-brand-line bg-brand-mist text-brand-ink hover:border-brand-teal/40 hover:bg-white'
               }`}
             >
-              <span className="font-extrabold">{role}</span>
-              <ArrowRight size={17} />
+              <span className="text-sm font-extrabold">{role}</span>
+              <ArrowRight size={15} />
             </button>
           ))}
         </div>
