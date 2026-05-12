@@ -28,7 +28,7 @@ import {
 } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 
-const appUrl = 'https://resident-companion.web.app'
+const appUrl = 'https://scopesolutions.com.et'
 const apkDownloadUrl = '/downloads/incisio-android.apk'
 
 const contactDetails = [
@@ -450,6 +450,8 @@ function SiteHeader() {
           </a>
           <a
             href={appUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-lift inline-flex items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-extrabold text-brand-ink shadow-soft hover:bg-brand-mist"
           >
             Open App
@@ -490,6 +492,8 @@ function SiteHeader() {
             </a>
             <a
               href={appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-2 flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-extrabold text-brand-ink"
             >
               Open App
@@ -569,6 +573,8 @@ function Hero() {
         </nav>
         <a
           href={appUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="btn-lift hidden items-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-extrabold text-brand-ink shadow-soft hover:bg-brand-mist sm:inline-flex"
         >
           Open App
@@ -610,6 +616,8 @@ function Hero() {
             </a>
             <a
               href={appUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg border border-white/32 px-5 py-4 text-sm font-extrabold text-white hover:bg-white/10"
             >
               Launch Web App
@@ -1131,6 +1139,8 @@ function Pricing() {
           </a>
           <a
             href={appUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-lift inline-flex items-center justify-center gap-2 rounded-lg bg-white px-4 py-3 text-sm font-extrabold text-brand-ink shadow-line hover:bg-brand-ink hover:text-white"
           >
             Open App
@@ -1452,6 +1462,8 @@ function Footer() {
               </a>
               <a
                 href={appUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-lift inline-flex w-fit items-center justify-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-extrabold text-brand-ink hover:bg-brand-mist"
               >
                 Open App
