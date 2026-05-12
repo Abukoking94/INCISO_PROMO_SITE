@@ -470,13 +470,13 @@ function SiteHeader() {
 
       {open && (
         <div className="mx-auto mt-2 max-w-7xl px-5 lg:hidden">
-          <div className="rounded-lg border border-white/22 bg-brand-ink/96 p-3 shadow-soft backdrop-blur-xl">
+          <div className="mobile-menu-panel rounded-lg border p-3 shadow-soft">
             {navItems.map(([label, href]) => (
               <a
                 key={label}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-4 py-3 text-sm font-extrabold text-white shadow-sm hover:bg-white/12"
+                className="mobile-menu-link block rounded-lg px-4 py-3 text-sm font-extrabold"
               >
                 {label}
               </a>
@@ -484,7 +484,7 @@ function SiteHeader() {
             <a
               href={apkDownloadUrl}
               download
-              className="mt-2 flex items-center justify-center gap-2 rounded-lg border border-white/18 px-4 py-3 text-sm font-extrabold text-white"
+              className="mt-2 flex items-center justify-center gap-2 rounded-lg border border-white/28 px-4 py-3 text-sm font-extrabold text-white hover:bg-white/10"
             >
               Download APK
               <Download size={16} />
