@@ -883,11 +883,11 @@ function ProductTour() {
               </div>
             </div>
 
-            <div className="order-1 flex items-center justify-center overflow-hidden rounded-lg border border-brand-line bg-brand-ink/5 p-3 shadow-line lg:row-span-4 lg:min-h-[330px]">
+            <div className="order-1 flex items-center justify-center overflow-hidden rounded-lg border border-brand-line bg-brand-ink/5 p-2 shadow-line lg:row-span-4 lg:min-h-[330px]">
               <img
                 src={current.image}
                 alt={`${active} dashboard from the Incisiō application`}
-                className="block max-h-[185px] w-full rounded-md object-contain object-center lg:max-h-[300px]"
+                className="block h-full max-h-[260px] w-auto max-w-full rounded-md object-contain object-center lg:max-h-[460px]"
               />
             </div>
 
