@@ -28,7 +28,7 @@ import {
 import { useEffect, useRef, useState } from 'react'
 
 const appUrl = 'https://scopesolutions.com.et'
-const apkDownloadUrl = '/downloads/incisio-android.apk'
+const apkDownloadUrl = '/downloads/incisio-android-v2.apk'
 
 const contactDetails = [
   {
